@@ -38,7 +38,24 @@ body{
 h1{
     color: #008000;
     position: absolute;
-    top: 0;
+    top: min(40px, 8vw);
+    font-size: min(40px, 10vw);
+    text-align: center;
+}
+#voltar{
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    transition: 0.8s;
+    cursor: pointer;
+}
+#voltar:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px gray;
+    background-color: #008000cc;
 }
 #card{
     background-color: white;
@@ -54,7 +71,7 @@ h1{
     color: #8BC02B;
     margin-bottom: 15px;
     text-align: center;
-    font-size: 26pt;
+    font-size: min(40px, 10vw);
     width: 100%;
     border: none;
     font-family: Inter-bold;
@@ -69,14 +86,15 @@ h1{
 img{
     border: 2px solid #008000;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: min(200px, 30vw);
+    height: min(200px, 30vw);;
 }
 .informacoes{
     text-align: justify;
 }
 .item{
     padding: 5px 0px;
+    text-align: left;
 }
 .label{
     color: #008000;
@@ -85,14 +103,15 @@ img{
 }
 .info{
     color: black;
-    font-size: 16px;
+    font-size: 1em;
     border: none;
+    width: min(200px, 40vw);
 }
 #bio{
     border: none;
     border-left: 2px solid #8BC02B;
     border-bottom: 2px solid #8BC02B;
-    padding-bottom: 10px;
+    padding: 10px 5px;
     width: 100%;
     color: black;
     background-color: white;
@@ -150,4 +169,5 @@ input{
 }
 #imgPerfil{
     display: none;
+    width: min(300px, 39vw);  
 }
