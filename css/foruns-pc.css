@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+:root {
+    --corFundo: #E6FFE6;
+    --corDetalhes: #008000;
+    --corBranco: #FFFFFF;
+    --corTextos: #8BC02B;
+}
+
+@font-face {
+    font-family: Inter-bold;
+    src: url(../fonts/Inter/static/Inter-Bold.ttf);
+}
+
+@media screen and (min-width: 768px){ /*768px é para tamanho de tablet em diante*/
+    header {
+        background-color: var(--corFundo);
+        height: 90px;
+        border: 1px solid var(--corDetalhes);
+    }
+    #burguer {
+        display: none;
+    }
+    .menu {
+        display: block;
+        text-align: center;
+    }
+    .menu > ul > li {
+        display: inline-block;
+    }
+    .menu > ul > li > a{
+        background-color: var(--corFundo);
+        color: var(--corDetalhes);
+        font-size: 15px;
+        font-family: 'Inter-bold';
+        padding: 30px;
+    }
+    .menu > ul > li > a:hover {
+        color: var(--corTextos);
+        background-color: var(--corFundo);
+    }
+    .perfil {
+        display: block;
+    }
+    #menuPerfil {
+        display: none;
+    }
+    #fotoForum {
+        height: 80px;
+        width: 80px;
+    }
+    .forum {
+        border: 1px solid var(--corTextos);
+    }
+    #assuntoForum {
+        font-size: 15px;
+        margin: 5px 0px 0px 90px;
+    }
+    #criadoPor {
+        margin-top: 10px;
+    }
+    .forum > li {
+        margin-left: 90px;
+    }
+}
