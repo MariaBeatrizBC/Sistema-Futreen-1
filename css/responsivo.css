@@ -12,7 +12,7 @@
     src: url(../fonts/Inter/static/Inter-Bold.ttf);
 }
 
-@media screen and (min-width: 768px){ /*768px é para tamanho de tablet em diante*/
+@media screen and (min-width: 790px){ /*768px é para tamanho de tablet em diante*/
     header {
         background-color: var(--corFundo);
         height: 90px;

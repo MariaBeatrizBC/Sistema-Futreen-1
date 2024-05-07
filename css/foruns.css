@@ -39,6 +39,10 @@ header {
     position: absolute;
 }
 
+#logo:hover {
+    filter: opacity(80%);
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -51,13 +55,12 @@ header {
     color: var(--corDetalhes);
     display: block;
     text-align: right;
-    padding: 20px;
+    padding: 28px;
     cursor: pointer;
 }
 
 .menu {
     display: none;
-    
 }
 
 .menu > ul {
@@ -81,10 +84,7 @@ header {
 }
 
 #atual {
-    color: var(--corDetalhes);
-    font-family: Inter-bold;
-    text-decoration: underline;
-
+    color: var(--corTextos);
 }
 
 #nomeUsuario {
@@ -97,11 +97,14 @@ header {
     color: black;
 }
 
+#nomeUsuario:hover {
+    color: var(--corTextos);
+}
+
 .perfil {
     display: none;
-    width: 100%;
     text-align: right;
-    margin: 0px -10px;
+    margin: 0px 10px 0px 710px;
 }
 
 #perfil {
@@ -127,7 +130,7 @@ header {
 input {
     border-radius: 20px;
     border: 1px solid var(--corDetalhes);
-    width: 40vw;
+    width: 60%;
     height: 25px;
     outline: none;
     padding: 10px;

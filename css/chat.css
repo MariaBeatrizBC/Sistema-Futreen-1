@@ -20,36 +20,72 @@
 body{
     background-color: var(--corBranco);
     margin: 0px;
+    overflow-y: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: var(--corFundo);
-    height: 90px;
-    padding: 5px;
+    background-color:var(--corFundo);
     border: 1px solid var(--corDetalhes);
 }
 
 #logo {
-    height: 90px;
+    height: 10vh;
+    padding: 5px;
     position: absolute;
-    margin-left: 5px;
+}
+
+#logo:hover {
+    filter: opacity(80%);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24,
+}
+
+#burguer {
+    color: var(--corDetalhes);
+    display: block;
+    text-align: right;
+    padding: 28px;
+    cursor: pointer;
 }
 
 .menu {
-    text-align: center;
-    margin: 30px;
+    display: none;
 }
 
-.menu > a {
-    font-family: Inter;
-    font-weight: 600px;
+.menu > ul {
+    list-style-type: none;
+}
+
+.menu > ul > li > a {
+    display: block;
+    padding: 10px;
     text-decoration: none;
-    color: var(--corTextos);
-    padding: 20px 30px;
+    text-align: center;
+    background-color: var(--corDetalhes);
+    font-size: 15px;
+    font-family: Inter;
+    color: var(--corBranco);
+    border-top: 2px solid var(--corBranco);
 }
 
-.menu > a::after {
-    color: var(--corDetalhes);
+.menu > ul > li > a:hover {
+    background-color: #8BC02B;
+}
+
+#atual {
+    color: var(--corTextos);
+    text-decoration: none;
 }
 
 #nomeUsuario {
@@ -62,10 +98,14 @@ header {
     color: black;
 }
 
+#nomeUsuario:hover {
+    color: var(--corTextos);
+}
+
 .perfil {
-    width: 100%;
+    display: none;
     text-align: right;
-    margin: -40px -10px;
+    margin: 0px 10px 0px 710px;
 }
 
 #perfil {
@@ -75,20 +115,13 @@ header {
     border: 2px solid #008000;
 }
 
-#atual {
-    color: var(--corDetalhes);
-    font-family: Inter-bold;
-    text-decoration: underline;
-
-}
-
 #buscar {
     font-family: Inter;
     text-align: center;
     color: var(--corTextos);
     font-weight: 200px;
     font-size: 18px;
-    margin-top: 18px;
+    margin: 10px;
 }
 
 .pesquisar {
@@ -98,8 +131,7 @@ header {
 input {
     border-radius: 20px;
     border: 1px solid var(--corDetalhes);
-    width: 70%;
-    max-width: 400px;
+    width: 60%;
     height: 25px;
     outline: none;
     padding: 10px;
