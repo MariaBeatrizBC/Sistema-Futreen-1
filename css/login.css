@@ -61,12 +61,12 @@ input {
 
 #email {
     padding: 5px;
-    width: 450px;
+    width: 28vw;
 }
 
 #senha {
     padding: 5px;
-    width: 250px;
+    width: 15vw;
     margin-top: 20px;
     margin-bottom: 20px;
 }

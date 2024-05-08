@@ -159,11 +159,11 @@ header {
     display: block;
     width: 100%;
     min-width: 200px;
-    border: 1px solid var(--corTextos);
     padding: 10px;
     margin-top: -1px;
     position: relative;
     box-sizing: border-box;
+    /*border: 1px solid var(--corTextos);*/
 }
 #fotoForum {
     height: 80px;
@@ -181,6 +181,7 @@ header {
 }
 #assuntoForum {
     font-family: Inter;
+    font-size: 12px;
     max-width: 92%;
     min-width: 200px;
     margin: 5px 0px 0px 90px;
@@ -193,6 +194,7 @@ header {
     margin-top: 10px;
 }
 #criadoPor {
+    width: 10vw;
     font-size: 10px;
     text-align: left;
     font-family: Inter;
@@ -248,4 +250,9 @@ header {
 }
 .linkPerfil{
     text-decoration: none;
+}
+
+#forumName {
+    width: 15vw;
+    font-size: 12px;
 }

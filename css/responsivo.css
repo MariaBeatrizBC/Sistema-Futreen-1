@@ -62,4 +62,16 @@
     .forum > li {
         margin-left: 90px;
     }
+    #forumName {
+        width: 100%;
+        font-size: 18px;
+    }
+    #imgPerfil{
+        width: 60px;
+        height: 60px;
+    }
+    #covName {
+        width: 100%;
+        font-size: 18px;
+    }
 }

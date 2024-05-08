@@ -50,7 +50,10 @@ header {
   'GRAD' 0,
   'opsz' 24,
 }
-
+.material-symbols-outlined {
+    text-decoration: none;
+    color: #008000;
+}
 #burguer {
     color: var(--corDetalhes);
     display: block;
@@ -96,6 +99,7 @@ header {
     font-family: Inter;
     font-size: 15px;
     color: black;
+    
 }
 
 #nomeUsuario:hover {

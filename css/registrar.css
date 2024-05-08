@@ -147,7 +147,7 @@ input {
 
 #nome {
     padding: 5px;
-    width: 400px;
+    width: 40vw;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -165,24 +165,24 @@ input {
 
 #email {
     padding: 5px;
-    width: 400px;
+    width: 200px;
 }
 
 #senha {
     padding: 5px;
-    width: 220px;
+    width: 200px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 #biografia {
     text-align: left;
-    margin-left: 190px;
+    margin-left: 10vw;
 }
 
 #bio {
     padding: 10px;
-    width: 450px;
+    width: 30vw;
     height: 50px;
     margin-top: 0px;
     border-radius: 0px 0px 0px 20px;
@@ -256,4 +256,6 @@ p {
 }
 #imgPerfil{
     display: block;
+    width: 36vw;
+    margin-left: 10vw;
 }

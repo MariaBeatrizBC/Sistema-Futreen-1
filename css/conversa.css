@@ -122,6 +122,10 @@ footer{
     cursor: pointer;
     border: none;
 }
+#covName {
+    width: 15vw;
+    font-size: 12px;
+}
 
 
 

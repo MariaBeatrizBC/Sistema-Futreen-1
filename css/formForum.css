@@ -22,7 +22,6 @@
         transform: translateY(0);
     }
 }
-
 body{
     background-color: #E6FFE6;
     font-family: Inter;
@@ -41,9 +40,26 @@ main{
     margin: auto;
     border-radius: 20px;
     border: solid 1px #008000;
-    max-width: 700px;
+    width: 50vw;
     display: block;
     text-align: center;
+}
+#voltar{
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    transition: 0.8s;
+    cursor: pointer;
+    width: 100px;
+    font-weight: bold;
+}
+#voltar:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px gray;
+    background-color: #008000cc;
 }
 h1{
     color: #008000;
@@ -62,7 +78,7 @@ input {
     margin-top: 20px;
     display: inline-block;
     padding: 5px;
-    width: 400px;
+    width: 35vw;
 }
 textarea{
     outline: none;
@@ -71,7 +87,7 @@ textarea{
     margin-top: 20px;
     display: inline-block;
     padding: 5px;
-    width: 400px;
+    width: 35vw;
     font-family: Inter;
 }
 #btCriarForum{
