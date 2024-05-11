@@ -18,12 +18,16 @@
         height: 90px;
         border: 1px solid var(--corDetalhes);
     }
+    #logo {
+        height: 11.5vh;
+    }
     #burguer {
         display: none;
     }
     .menu {
         display: block;
         text-align: center;
+        margin-left: -25px;
     }
     .menu > ul > li {
         display: inline-block;
@@ -34,6 +38,7 @@
         font-size: 15px;
         font-family: 'Inter-bold';
         padding: 30px;
+        margin-left: 0px;
     }
     .menu > ul > li > a:hover {
         color: var(--corTextos);
@@ -41,6 +46,7 @@
     }
     .perfil {
         display: block;
+        margin-top: -68px;
     }
     #menuPerfil {
         display: none;
@@ -74,5 +80,4 @@
         width: 100%;
         font-size: 18px;
     }
-    
 }

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/foruns.css">
-    <link rel="icon" type="image/png" href="../img/Logo.png" />
+    <link rel="icon" href="../img/Logo.png">
+    <link rel="stylesheet" href="../css/ranking.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/responsivo.css">
-    <title>Fóruns - Futreen</title>
+    <title>Ranking</title>
 </head>
 <body>
     <header>
@@ -15,11 +15,11 @@
         <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
         <nav class="menu" id="itens">
             <ul>
-                <li><a href="foruns.html" id="atual">Fóruns</a></li>
+                <li><a href="foruns.html">Fóruns</a></li>
                 <li><a href="chat.html">Chat</a></li>
                 <li><a href="meusForuns.html">Meus Fóruns</a></li>
                 <li><a href="shower.html">Shower Challenge</a></li>
-                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="ranking.html" id="atual">Ranking</a></li>
                 <li id="menuPerfil"><a href="perfil.html">Perfil</a></li>
             </ul>
         </nav>
@@ -29,17 +29,24 @@
             <img id="perfil" src=" " alt="perfil"></a>
         </div>
     </header>
-    
-    <div class="topo">
-        <p id="buscar">Buscar Fórum</p>
-        <div class="pesquisar">
-            <input id="pesquisar" type="search" name="pesquisar" id="pesquisar">
-            <img id="lupa" src="../img/lupa.svg" alt="lupa">
-        </div>
-        <a href="formForum.html" class="formForum">Criar Novo Fórum</a>
-    </div>
-    <main id="main">        
+
+    <main>
+        <h1>Ranking Desafio do Banho</h1>
+
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Usuário</th>
+                    <th>Pontos</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+               
+            </tbody>
+        </table>
     </main>
-    <script type="text/javascript" src="../js/forum.js"></script>
+    
+    <script src="../js/ranking.js" type="text/javascript"></script>
 </body>
 </html>

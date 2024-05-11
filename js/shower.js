@@ -1,3 +1,15 @@
+if(sessionStorage.getItem('token') == null){
+  location.replace('http://127.0.0.1:5500/index.html')
+}
+
+const nomeUser = document.getElementById('nomeUsuario')
+nomeUser.innerText = sessionStorage.getItem("username")
+
+const perfil = document.getElementById('perfil')
+perfil.src = sessionStorage.getItem('fotoPerfil')
+
+const fotoConv = document.getElementById('imgPerfilConv')
+
 let hour = 0;
 let minute = 0;
 let second = 0;

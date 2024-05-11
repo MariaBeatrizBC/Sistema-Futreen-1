@@ -1,0 +1,48 @@
+@font-face {
+    font-family: Inter;
+    src: url(/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: Inter-bold;
+    src: url(/fonts/Inter/static/Inter-Bold.ttf);
+}
+body{
+    font-family: Inter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    color: #008000;
+}
+h2{
+    color: #008000;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+main{
+    border: 3px solid #8BC02B;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset -10px -10px 10px rgba(0, 0, 0, 40%);
+    overflow-y: auto;
+}
+.banho{
+    border: 2px solid #008000;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 50%);
+    margin-bottom: 10px;
+}
+table{
+    width: 800px;
+}
+th{
+    color: #8BC02B;
+    font-family: Inter-bold;
+}
+td{
+    text-align: center;
+}

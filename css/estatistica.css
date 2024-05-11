@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+:root {
+    --corFundo: #E6FFE6;
+    --corDetalhes: #008000;
+    --corBranco: #FFFFFF;
+    --corTextos: #8BC02B;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: Inter-bold;
+    src: url(/fonts/Inter/static/Inter-Bold.ttf);
+}
+body{
+    background-color: var(--corBranco);
+    margin: 0px;
+    overflow-y: hidden;
+    font-family: Inter;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+header {
+    background-color: var(--corFundo);
+    height: 90px;
+    padding: 5px;
+    border: 1px solid var(--corDetalhes);
+}
+#logo {
+    height: 90px;
+    position: absolute;
+    margin-left: 5px;
+}
+.menu {
+    text-align: center;
+    margin: 30px;
+}
+.menu > a {
+    font-family: Inter;
+    font-weight: 600px;
+    text-decoration: none;
+    color: var(--corTextos);
+    padding: 20px 30px;
+}
+.menu > a::after {
+    color: var(--corDetalhes);
+    text-decoration: dashed;
+}
+main{
+    display: flex;   
+    height: 100vh;
+    width: 100%;
+}
+#perfil{
+    width: 300px;
+    text-align: center;
+}
+.img{
+    border-bottom: 2px solid #008000;
+    margin-top: 10px;
+    font-family: Inter-bold;
+}
+.bio{
+    text-align: justify;
+    margin: 10px 15px 0px 15px;
+}
+.title{
+    color: #008000;
+    text-align: center;
+}
+
+#infos{
+    text-align: center;
+    width: calc(100% - 300px);
+    border-left: 2px solid #008000;
+}
+.container, .containerMes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#total, #mes{
+    border-bottom: 2px solid #008000;
+}
+.dadoTotal{
+    display: flex;
+    width: 25%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter-bold;
+}
+#dados{
+    display: flex;
+    width: 30%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter-bold;
+}
+.titleDados{
+    color: #8BC02B;
+    margin: 5px;
+}
+.cpDado{
+    background-color: #d9d9d9;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
+}
+.grafico{
+    width: 800px;
+    margin: auto;
+}
+.aHistorico{
+    background-color: #008000;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+

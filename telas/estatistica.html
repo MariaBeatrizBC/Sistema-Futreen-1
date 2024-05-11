@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estatistica.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="../img/Logo.png">
+    <title>Perfil</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../img/Logo.png" alt="logo"></a>
+        <div class="menu">
+            <a href="foruns.html">Fóruns</a>
+            <a href="chat.html">Chat</a>
+            <a href="meusForuns.html">Meus Fóruns</a>
+            <a href="ranking.html">Ranking</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="perfil">
+            <div class="img">
+                <img src="../img/perfil.png" id="ftPerfil">
+                <p id="username">@Username</p>
+            </div>
+            <div class="bio">
+                <h3 class="title">Bio</h3>
+                <p id="bio">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+        </div>
+
+        <div id="infos">
+            <div id="total">
+                <h2 class="title">Acompanhamento Total</h2>
+
+                <div class="container">
+                    <div class="dadoTotal">
+                        <h3 class="titleDados">Banhos</h3>
+                        <p class="cpDado"><span id="qtdBanhoTotal">0</span> Banhos</p>
+                    </div>
+    
+                    <div class="dadoTotal">
+                        <h3 class="titleDados">Pontuação</h3>
+                        <p class="cpDado"><span id="pontosTotal">0</span> Pontos</p>
+                    </div>
+    
+                    <div class="dadoTotal">
+                        <h3 class="titleDados">Consumo de Água</h3>
+                        <p class="cpDado"><span id="consumoTotal">0</span> Litros</p>
+                    </div>
+
+                    <div class="dadoTotal">
+                        <h3 class="titleDados">Consumo/Banho</h3>
+                        <p class="cpDado"><span id="consumoBanho">0</span> Litros</p>
+                    </div>
+                </div>
+                </div>
+
+            <div id="mes">
+                <h2 class="title">Acompanhamento do Mês</h2>
+                
+                <div class="containerMes">
+                    <div id="dados">
+                        <h3 class="titleDados">Banhos</h3>
+                        <p class="cpDado"><span id="qtdBanho">0</span> Banhos</p>
+                    </div>
+    
+                    <div id="dados">
+                        <h3 class="titleDados">Pontuação</h3>
+                        <p class="cpDado"><span id="pontos">0</span> Pontos</p>
+                    </div>
+    
+                    <div id="dados">
+                        <h3 class="titleDados">Tempo Total</h3>
+                        <p id="tempoTotal" class="cpDado">00:00:00</p>
+                    </div>
+    
+                    <div id="dados">
+                        <h3 class="titleDados">Tempo Médio/Banho</h3>
+                        <p id="tempoMedia" class="cpDado">00:00</p>
+                    </div>
+    
+                    <div id="dados">
+                        <h3 class="titleDados">Consumo de Água</h3>
+                        <p class="cpDado"><span id="consumo">0</span> Litros</p>
+                    </div>
+                </div>
+
+                <div class="grafico">
+                    <canvas id="grafico"></canvas>
+                    <a href="historico.html" class="aHistorico">Histórico de Banhos</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script type="text/javascript" src="../js/estatistica.js"></script>
+
+</body>
+</html>
