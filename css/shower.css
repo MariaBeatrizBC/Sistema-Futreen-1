@@ -150,3 +150,18 @@ span{
 .botoes {
     margin-top: 60px;
 }
+
+.botoesTelas {
+    margin-top: 50px;
+    display: inline-block;
+    justify-content: space-around;
+}
+
+.botoesTelas > a {
+    background-color: #008000;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 10px;
+}
