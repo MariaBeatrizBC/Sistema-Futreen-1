@@ -1,3 +1,5 @@
+const perfil = document.getElementById('perfil')
+perfil.src = sessionStorage.getItem('fotoPerfil')
 const username = document.getElementById('username')
 const bio = document.getElementById('bio')
 const qtdBanho = document.getElementById('qtdBanho')
@@ -68,4 +70,12 @@ async function buscarDados(){
         })
     })
 }
+
+function clickMenu(){
+  if(itens.style.display == 'block') {
+      itens.style.display = 'none';
+  } else {
+      itens.style.display = 'block';
+  }
+} 
 

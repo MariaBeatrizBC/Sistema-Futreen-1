@@ -165,3 +165,26 @@ span{
     border-radius: 15px;
     margin: 10px;
 }
+
+#estatistica, #historico {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+#estatistica:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px gray;
+    background-color: #008000cc;
+}
+
+#historico:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px gray;
+    background-color: #008000cc;
+}

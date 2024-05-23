@@ -1,3 +1,5 @@
+const perfil = document.getElementById('perfil')
+perfil.src = sessionStorage.getItem('fotoPerfil')
 const main = document.getElementById('banhos')
 
 const qtdBanho = document.getElementById('qtd')
@@ -89,3 +91,11 @@ async function buscarHistorico(){
         })
     })
 }
+
+function clickMenu(){
+    if(itens.style.display == 'block') {
+        itens.style.display = 'none';
+    } else {
+        itens.style.display = 'block';
+    }
+  } 

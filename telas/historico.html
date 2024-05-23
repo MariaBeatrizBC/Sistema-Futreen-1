@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/Logo.png">
     <link rel="stylesheet" href="../css/historico.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/responsivo.css">
     <title>Histórico Banhos</title>
 </head>
 <body>
-    <h1>Histórico de Banhos do Mês</h1>
+    <header>
+        <a href="../index.html"><img id="logo" src="../img/Logo.png" alt="logo"></a>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        
+        <nav class="menu" id="itens">
+            <ul>
+                <li><a href="foruns.html">Fóruns</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meusForuns.html">Meus Fóruns</a></li>
+                <li><a href="shower.html" id="atual">Shower Challenge</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li id="menuPerfil"><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+
+        <div class="perfil">
+            <a href="perfil.html" class="linkPerfil">
+            <p id="nomeUsuario">@nomedeusuario</p>
+            <img id="perfil" src=" " alt="perfil"></a>
+        </div>
+    </header>
+    <a href="shower.html" id="voltar"><span class="material-symbols-outlined">arrow_back</span></span></a>
+    <section>
+        <h1>Histórico de Banhos do Mês</h1>
 
     <div class="banho">
         <h2>Resumo do Mês</h2>
@@ -35,6 +60,7 @@
             </tbody>
         </table>
     </div>
+    </section>
 
     <main id="banhos">
         
