@@ -174,6 +174,7 @@ input {
     display: float;
     float: left;
     z-index: 1;
+    height: calc(100vh - 101.6px);
 }
 
 #conversa{
@@ -197,4 +198,22 @@ input {
     border: 2px solid #008000;
 }
 
+#aviso{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #8BC02B;
+}
+#aviso i{
+    color: #8BC02B;
+    font-size: 50px;
+}
+#avisoMsg{
+    font-family: Inter-bold;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 80%);
+    height: calc(100vh - (101.6px + 170px));
+}
 

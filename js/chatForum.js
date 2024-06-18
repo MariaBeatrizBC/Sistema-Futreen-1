@@ -29,72 +29,75 @@ async function buscarForuns() {
             response.json().then((foruns) => {
                 console.log(foruns);
 
-                foruns.forEach(forum => {
-                    const divForum = document.createElement('div')
-                    divForum.className = 'forum'
-                    divForum.id = forum.id
-
-                    const img = document.createElement('img')
-                    img.src = forum.foto
-                    img.id = 'fotoForum'
-
-                    const li = document.createElement('li')
-                    li.innerText = forum.nome
-
-                    const p = document.createElement('p')
-                    p.innerText = forum.descricao
-                    p.id = 'assuntoForum'
-
-                    const divSair = document.createElement('div')
-                    divSair.className = 'sair'
-
-                    const pCria = document.createElement('p')
-                    pCria.innerText = `Criado por ${forum.criador.userName}`
-                    pCria.id = 'criadoPor'
-
-                    const btSair = document.createElement('button')
-                    btSair.id = 'sair'
-                    btSair.innerText = "Sair"
-
-                    divSair.appendChild(pCria)
-                    divSair.appendChild(btSair)
-
-                    divForum.appendChild(img)
-                    divForum.appendChild(li)
-                    divForum.appendChild(p)
-                    divForum.appendChild(divSair)
-
-                    mainForuns.append(divForum)
-
-                    divForum.addEventListener('click', function () {
-                        sessionStorage.setItem('idChatForum', this.id)
-                        mainForuns.style.width = '45%'
-                        convForum.style.display = 'flex'
-                        abrirForum()
-                        forumName.innerText = li.innerText
-                        imgPerfil.src = forum.foto
-                        buscaInfo()
-                    })
-
-                    btSair.addEventListener('click', async function() {
-                        const PUT = {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        }
-
-                        await fetch(`http://localhost:8080/api/forum/sair/${forum.id}/${sessionStorage.getItem('userId')}`, PUT)
-                        .then((response) => {
-                            response.json().then((resposta) => {
-                                if(resposta.mensagem == "Sucesso"){
-                                    location.reload()
-                                    buscarForuns()
+                if(foruns != ''){
+                    foruns.forEach(forum => {
+                        const divForum = document.createElement('div')
+                        divForum.className = 'forum'
+                        divForum.id = forum.id
+    
+                        const img = document.createElement('img')
+                        img.src = forum.foto
+                        img.id = 'fotoForum'
+    
+                        const li = document.createElement('li')
+                        li.innerText = forum.nome
+    
+                        const p = document.createElement('p')
+                        p.innerText = forum.descricao
+                        p.id = 'assuntoForum'
+    
+                        const divSair = document.createElement('div')
+                        divSair.className = 'sair'
+    
+                        const pCria = document.createElement('p')
+                        pCria.innerText = `Criado por ${forum.criador.userName}`
+                        pCria.id = 'criadoPor'
+    
+                        const btSair = document.createElement('button')
+                        btSair.id = 'sair'
+                        btSair.innerText = "Sair"
+    
+                        divSair.appendChild(pCria)
+                        divSair.appendChild(btSair)
+    
+                        divForum.appendChild(img)
+                        divForum.appendChild(li)
+                        divForum.appendChild(p)
+                        divForum.appendChild(divSair)
+    
+                        document.getElementById('aviso').style.display = 'none'
+                        mainForuns.append(divForum)
+    
+                        divForum.addEventListener('click', function () {
+                            sessionStorage.setItem('idChatForum', this.id)
+                            mainForuns.style.width = '45%'
+                            convForum.style.display = 'flex'
+                            abrirForum()
+                            forumName.innerText = li.innerText
+                            imgPerfil.src = forum.foto
+                            buscaInfo()
+                        })
+    
+                        btSair.addEventListener('click', async function() {
+                            const PUT = {
+                                method: 'PUT',
+                                headers: {
+                                    'Content-Type': 'application/json'
                                 }
+                            }
+    
+                            await fetch(`http://localhost:8080/api/forum/sair/${forum.id}/${sessionStorage.getItem('userId')}`, PUT)
+                            .then((response) => {
+                                response.json().then((resposta) => {
+                                    if(resposta.mensagem == "Sucesso"){
+                                        location.reload()
+                                        buscarForuns()
+                                    }
+                                })
                             })
                         })
-                    })
-                });
+                    });
+                }
             })
         })
 }
@@ -274,6 +277,9 @@ btRegistrar.addEventListener('click', async function() {
                 desabilitar()
 
                 sucesso.style.animation = 'notificar 10s'
+            }else{
+                document.getElementById('msgErro').innerText = 'Não foi possível alterar seu Fórum!'
+                document.getElementById('erro').style.display = 'flex'
             }
 
         })
@@ -307,3 +313,7 @@ function clickMenu(){
         itens.style.display = 'block';
     }
 } 
+
+document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('erro').style.display = 'none'
+})

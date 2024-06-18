@@ -139,10 +139,15 @@ async function alterarUser() {
                     const sucesso = document.getElementById('sucesso')
                     sucesso.style.animation = 'notificar 10s'
 
+                }else{
+                    document.getElementById('msgErro').innerText = 'Não foi possível alterar seu perfil!'
+                    document.getElementById('erro').style.display = 'flex'
                 }
             })
         })
 }
 
-
+document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('erro').style.display = 'none'
+})
 

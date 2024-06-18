@@ -16,6 +16,9 @@ const lupa = document.getElementById('lupa')
 
 const fotoConv = document.getElementById('imgPerfilConv')
 
+const aviso = document.getElementById('aviso')
+const msgAviso = document.getElementById('avisoMsg')
+
 window.addEventListener('DOMContentLoaded', buscaHistorico())
 
 async function buscaHistorico() {
@@ -25,35 +28,42 @@ async function buscaHistorico() {
         .then((resposta) => {
             resposta.json().then((usuarios) => {
                 console.log(usuarios);
-                usuarios.forEach(usuario => {
-                    if (usuario.id != this.sessionStorage.getItem('userId')) {
+                if(usuarios != ''){
+                    usuarios.forEach(usuario => {
+                        if (usuario.id != this.sessionStorage.getItem('userId')) {
+    
+                            aviso.style.display = 'none'
 
-                        const divConversa = this.document.createElement('div')
-                        divConversa.className = 'conversa'
-                        const imagem = this.document.createElement('img')
-                        imagem.src = usuario.foto
-                        imagem.id = 'fotoUsuario'
-                        const nome = this.document.createElement('p')
-                        nome.id = 'usuario'
-                        nome.innerHTML = usuario.userName
-
-                        divConversa.id = usuario.id
-                        divConversa.appendChild(imagem)
-                        divConversa.appendChild(nome)
-
-                        main.appendChild(divConversa)
-
-                        divConversa.addEventListener('click', function () {
-                            sessionStorage.setItem('idConversa', this.id)
-                            idChat.style.width = '45%'
-                            idConversa.style.display = 'flex'
-                            fotoConv.src = imagem.src
-                            document.getElementById('covName').innerText = usuario.userName
-                            mostrarConversa()
-                            buscaInfo()
-                        })
-                    }
-                });
+                            const divConversa = this.document.createElement('div')
+                            divConversa.className = 'conversa'
+                            const imagem = this.document.createElement('img')
+                            imagem.src = usuario.foto
+                            imagem.id = 'fotoUsuario'
+                            const nome = this.document.createElement('p')
+                            nome.id = 'usuario'
+                            nome.innerHTML = usuario.userName
+    
+                            divConversa.id = usuario.id
+                            divConversa.appendChild(imagem)
+                            divConversa.appendChild(nome)
+    
+                            main.appendChild(divConversa)
+    
+                            divConversa.addEventListener('click', function () {
+                                sessionStorage.setItem('idConversa', this.id)
+                                idChat.style.width = '45%'
+                                idConversa.style.display = 'flex'
+                                fotoConv.src = imagem.src
+                                document.getElementById('covName').innerText = usuario.userName
+                                mostrarConversa()
+                                buscaInfo()
+                            })
+                        }
+                    });
+                }else{
+                    msgAviso.innerText = `Você ainda não tem nenhuma conversa!`
+                    aviso.style.display = 'flex'
+                }
             })
         })
 
@@ -179,33 +189,38 @@ async function pesquisarUser() {
             .then((resposta) => {
                 resposta.json().then((usuarios) => {
 
-                    usuarios.forEach(usuario => {
+                    if(usuarios != ''){
+                        usuarios.forEach(usuario => {
 
-                        const divConversa = document.createElement('div')
-                        divConversa.className = 'conversa'
-                        const imagem = document.createElement('img')
-                        imagem.src = usuario.foto
-                        imagem.id = 'fotoUsuario'
-                        const nome = document.createElement('p')
-                        nome.id = 'usuario'
-                        nome.innerHTML = usuario.userName
-
-                        divConversa.id = usuario.id
-                        divConversa.appendChild(imagem)
-                        divConversa.appendChild(nome)
-
-                        main.appendChild(divConversa)
-
-                        divConversa.addEventListener('click', function () {
-                            sessionStorage.setItem('idConversa', this.id)
-                            idChat.style.width = '45%'
-                            idConversa.style.display = 'flex'
-                            fotoConv.src = imagem.src
-                            document.getElementById('covName').innerText = usuario.userName
-                            mostrarConversa()
-                            buscaInfo()
-                        })
-                    });
+                            const divConversa = document.createElement('div')
+                            divConversa.className = 'conversa'
+                            const imagem = document.createElement('img')
+                            imagem.src = usuario.foto
+                            imagem.id = 'fotoUsuario'
+                            const nome = document.createElement('p')
+                            nome.id = 'usuario'
+                            nome.innerHTML = usuario.userName
+    
+                            divConversa.id = usuario.id
+                            divConversa.appendChild(imagem)
+                            divConversa.appendChild(nome)
+    
+                            main.appendChild(divConversa)
+    
+                            divConversa.addEventListener('click', function () {
+                                sessionStorage.setItem('idConversa', this.id)
+                                idChat.style.width = '45%'
+                                idConversa.style.display = 'flex'
+                                fotoConv.src = imagem.src
+                                document.getElementById('covName').innerText = usuario.userName
+                                mostrarConversa()
+                                buscaInfo()
+                            })
+                        });
+                    }else{
+                        msgAviso.innerText = `Não foi encontrado nenhum usuário para a pesquisa "${pesquisar.value}"`
+                        aviso.style.display = 'flex'
+                    }
                 })
             })
     }

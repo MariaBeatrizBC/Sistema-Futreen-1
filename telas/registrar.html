@@ -16,26 +16,28 @@
             <img id="logo" src="../img/perfil.png" alt="logo">
             
         </div>
-        <div class="inputs">
-            <input type="file" id="imgPerfil" name="imgPerfil">
-
-            <input id="nome" type="name" name="Nome" placeholder="Nome Completo">
-            <br>
-            <p id="data">Data de Nascimento:</p><input id="dataNasc" type="date" name="Data">
-            <br>
-            <input id="usuario" type="usuario" name="Usuario" placeholder="Nome de usuário">
-            <br>
-            <input id="email" type="email" name="Email" placeholder="Email">
-            <br>
-            <input id="senha" type="password" name="Senha" placeholder="Senha">
-            <br>
-            <p id="biografia">Bio:</p>
-            <input id="bio" type="bio" name="Bio">
-            <br>
-        </div>
-        <div class="botao">
-            <button type="button" id="cadastrar">Cadastrar</button>
-        </div>
+        <form id="form">
+            <div class="inputs">
+                <input type="file" id="imgPerfil" name="imgPerfil">
+    
+                <input id="nome" type="name" name="Nome" placeholder="Nome Completo" required>
+                <br>
+                <p id="data">Data de Nascimento:</p><input id="dataNasc" type="date" name="Data" required>
+                <br>
+                <input id="usuario" type="usuario" name="Usuario" placeholder="Nome de usuário" required>
+                <br>
+                <input id="email" type="email" name="Email" placeholder="Email" required>
+                <br>
+                <input id="senha" type="password" name="Senha" placeholder="Senha" required>
+                <br>
+                <p id="biografia">Bio:</p>
+                <input id="bio" type="bio" name="Bio" required>
+                <br>
+            </div>
+            <div class="botao">
+                <button type="submit" id="cadastrar">Cadastrar</button>
+            </div>
+        </form>
         <div class="login">
             <p>Já tem uma conta? <a id="login" href="../index.html">Faça login</a></p>
         </div>
@@ -44,6 +46,15 @@
     <div id="sucesso">
         <i class='bx bxs-check-circle'></i>
         <span><b>Cadatro realizado com sucesso!</b></span>
+    </div>
+
+    <div id="erro">
+        <div class="erro">
+            <span id="close">X</span>
+            <i class='bx bxs-x-circle'></i>
+            <p id="msgErro"></p>
+            <p>Tente novamente!</p>
+        </div>
     </div>
 
     <script type="text/javascript" src="../js/registrar.js"></script>

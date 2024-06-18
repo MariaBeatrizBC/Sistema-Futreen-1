@@ -18,12 +18,12 @@
             <br>
             <input type="file" id="imgPerfil">
         </div>
-        <div class="inputs">
-            <input type="text" id="nomeForum" placeholder="Nome do Fórum">
-            <textarea id="descForum" placeholder="Descrição do Fórum" rows="4"></textarea>
-        </div>
-
+        <form class="inputs">
+            <input type="text" id="nomeForum" placeholder="Nome do Fórum" required>
+            <textarea id="descForum" placeholder="Descrição do Fórum" rows="4" required></textarea>
+        </form>
         <button id="btCriarForum">Criar Fórum</button>
+
     </main>
 
     <div id="sucesso">
@@ -32,6 +32,15 @@
         <p>Agora você pode compartilhar o nome do seu fórum de discussão com os seus amigos(as) para eles(as) poderem ingressarem.</p>
         <p class="obs">OBS: Agora sempre que houver uma nova postagem neste fórum você receberá um email para se manter atualizado! Isso pode ser mudado nas configurações do fórum.</p>
         <a class="ok" href="foruns.html">OK</a>
+    </div>
+
+    <div id="erro">
+        <div class="erro">
+            <span id="close">X</span>
+            <i class='bx bxs-x-circle'></i>
+            <p id="msgErro"></p>
+            <p>Tente novamente!</p>
+        </div>
     </div>
 
     <script type="text/javascript" src="../js/forum.js"></script>

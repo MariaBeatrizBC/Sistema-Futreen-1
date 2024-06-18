@@ -27,7 +27,14 @@ imgPerfil.addEventListener('change', function() {
     }
 })
 
-btCadastrar.addEventListener('click', async function() {
+const form = document.getElementById('form')
+
+form.addEventListener('submit', function(evt){
+    evt.preventDefault()
+    cadastrar()
+})
+
+async function cadastrar() {
     let imagem = ""
     if(imgPerfil.files.length > 0){
         imagem = document.getElementById('logo').src
@@ -56,27 +63,30 @@ btCadastrar.addEventListener('click', async function() {
     const response = await fetch('http://localhost:8080/api/usuario', post).then((resposta) => {
         resposta.json().then((retorno) => {
             console.log(retorno);
-            if(retorno[0].mensagem == 'Sucesso'){
-                
-                sessionStorage.setItem("userId", retorno[1])
-                sessionStorage.setItem("username", retorno[2])
-                sessionStorage.setItem('fotoPerfil', retorno[3])
-
-                msgSucesso.style.display = 'flex'
-                msgSucesso.style.animationName = 'notificar'
-                msgSucesso.style.animationDuration = '2s'
-
-                msgSucesso.style.animationName = 'sumir'
-                msgSucesso.style.animationDuration = '2s'
-                msgSucesso.style.animationDelay = '5s'
-
-                msgSucesso.addEventListener('animationend', function() {
-                    window.location.href = "../telas/foruns.html"
-                })
-                
-            }
-        })
-    })
-
+                if(retorno.hasOwnProperty('error')){
+                    document.getElementById('msgErro').innerText = retorno.mensagem
+                    document.getElementById('erro').style.display = 'flex'
+                } else{
+                    sessionStorage.setItem("userId", retorno[1])
+                    sessionStorage.setItem("username", retorno[2])
+                    sessionStorage.setItem('fotoPerfil', retorno[3])
     
-}); 
+                    msgSucesso.style.display = 'flex'
+                    msgSucesso.style.animationName = 'notificar'
+                    msgSucesso.style.animationDuration = '2s'
+    
+                    msgSucesso.style.animationName = 'sumir'
+                    msgSucesso.style.animationDuration = '2s'
+                    msgSucesso.style.animationDelay = '5s'
+    
+                    msgSucesso.addEventListener('animationend', function() {
+                        window.location.href = "../telas/foruns.html"
+                    })
+                }
+        })
+    })   
+} 
+
+document.getElementById('close').addEventListener('click', function(){
+    erro.style.display = 'none'
+})

@@ -1,6 +1,6 @@
 const perfil = document.getElementById('perfil')
 perfil.src = sessionStorage.getItem('fotoPerfil')
-const username = document.getElementById('username')
+const username = document.getElementById('nomeUsuario')
 const bio = document.getElementById('bio')
 const qtdBanho = document.getElementById('qtdBanho')
 const pontos = document.getElementById('pontos')
@@ -22,8 +22,9 @@ username.innerText = sessionStorage.getItem('username')
 document.addEventListener("DOMContentLoaded", buscarDados())
 
 async function buscarDados(){
-    
-    const response = await fetch(`http://localhost:8080/api/banho/${sessionStorage.getItem('userId')}/03/2004`).then((resposta) => {
+    let data = new Date()  
+
+    const response = await fetch(`http://localhost:8080/api/banho/${sessionStorage.getItem('userId')}/${data.getMonth() + 1}/${data.getFullYear()}`).then((resposta) => {
         resposta.json().then((estatistica) => {
 
             console.log(estatistica)
@@ -33,7 +34,6 @@ async function buscarDados(){
             consumo.innerText = estatistica[0].consumo 
             timeMedia.innerText = estatistica[0].tempoMedia
 
-            bio.innerText = estatistica[0].bio
             qtdBanhoTotal.innerText = estatistica[0].qtdBanhoTotal
             pontosTotal.innerText = estatistica[0].pontuacaoTotal
             consumoTotal.innerText = estatistica[0].consumoTotal

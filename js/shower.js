@@ -17,9 +17,7 @@ let millisecond = 0;
 
 let cron;
 
-document.form_main.start.onclick = () => start();
-document.form_main.pause.onclick = () => pause();
-document.form_main.reset.onclick = () => reset();
+
 
 function start() {
   pause();
@@ -65,42 +63,6 @@ if (sessionStorage.getItem('token') == null) {
     location.replace('http://127.0.0.1:5500/index.html');
 }
 
-const lupa = document.getElementById('lupa');
-
-const body = document.getElementById('formForum');
-if (body == null) {
-    const campName = document.getElementById('nomeUsuario');
-    campName.innerText = sessionStorage.getItem("username");
-
-    const perfil = document.getElementById('perfil');
-    perfil.src = sessionStorage.getItem('fotoPerfil');
-
-    window.addEventListener('DOMContentLoaded', listar);
-
-    lupa.addEventListener('click', pesquisarForum);
-} else {
-    const btCriar = document.getElementById('btCriarForum');
-    const imgPerfil = document.getElementById('imgPerfil');
-
-    imgPerfil.addEventListener('change', function() {
-        if(imgPerfil.files.length > 0){
-            const img = imgPerfil.files[0];
-            const leitor = new FileReader();
-    
-            leitor.onload = async function(arqCarregado){
-                const imgCovertida = arqCarregado.target.result;
-    
-                document.getElementById('imgForum').src = imgCovertida;
-    
-                console.log(imgCovertida);
-            }   
-            leitor.readAsDataURL(img);
-        }
-    })
-
-    btCriar.addEventListener('click', cadastrar);
-}
-
 function clickMenu(){
     if(itens.style.display == 'block') {
         itens.style.display = 'none';
@@ -108,3 +70,58 @@ function clickMenu(){
         itens.style.display = 'block';
     }
 } 
+
+document.getElementById('stop').addEventListener('click', registrar)
+
+async function registrar(){
+  pause()
+
+  const hora = document.getElementById('hour').innerText
+  const minutos = document.getElementById('minute').innerText
+  const segundos = document.getElementById('second').innerText
+
+  const banho = {
+    data: Date.now(),
+    usuario: {
+      id: sessionStorage.getItem('userId')
+    },
+    tempo: `${hora}:${minutos}:${segundos}`,
+    tipoChuv: document.getElementById('tipoChuv').value,
+    vazaoChuv: document.getElementById('vazao').value
+  }
+
+  const post = {
+    method: 'POST',
+    headers: {
+        "Content-Type": 'application/json'
+    },
+    body: JSON.stringify(banho)
+  }
+  
+  const sucesso = document.getElementById('sucesso')
+
+  await fetch('http://localhost:8080/api/banho', post).then((response) => {
+    response.json().then((resposta) =>{
+      console.log(resposta)
+
+      if(resposta.status == 'OK'){
+        document.getElementById('ponto').innerText = resposta.mensagem
+        sucesso.style.display = 'block'
+        sucesso.style.animation = 'notificar 10s'
+      } else{
+        document.getElementById('msgErro').innerText = 'Não foi possível registrar se banho!'
+        document.getElementById('erro').style.display = 'flex'
+      }
+    })
+
+    sucesso.addEventListener('animationend', function(){
+      sucesso.style.display = 'none'
+      window.location.reload()
+    })
+  })
+
+}
+
+document.getElementById('close').addEventListener('click', function(){
+  document.getElementById('erro').style.display = 'none'
+})

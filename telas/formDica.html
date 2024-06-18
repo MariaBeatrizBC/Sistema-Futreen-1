@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/formDica.css">
+    <link rel="icon" href="../img/Logo.png">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Nova Dica Sustentável</title>
+</head>
+<body>
+    <main>
+        <form id="forum">
+            <h2>Dica Sustentável</h2>
+            <input type="text" id="titulo" placeholder="Título" required>
+            <br>
+            <div class="inputs">
+                <input type="hidden" id="cpId">
+                <label for="material">Escreva os materiais necessários separados por (;)</label>
+                <br>
+                <input type="text" placeholder="Ex.: Material1; Material2." name="material" id="material" required>
+                <br>
+                <label for="tutorial">Escreva cada instrução separando com (;)</label>
+                <br>
+                <input type="text" name="tutorial" id="tutorial" placeholder="Ex.: Passo1; Passo2" required>
+                <br>
+                <input type="file" id="foto">
+                <br>
+            </div>
+            <button id="btForm">Registrar</button>
+        </form>
+
+    </main>
+    <div class="sucesso" id="sucessoPost">
+        <i class='bx bxs-check-circle certo'></i>
+        <b><p>Parabéns!</p></b>
+        <p>Sua dica sustentável foi publicada com sucesso. Este dica te rendeu:</p>
+        <b><p class="ponto" id="ponto">20</p></b>
+        <b><p>PONTOS</p></b>
+    </div>
+
+    <div class="sucesso" id="sucessoPut">
+        <i class='bx bxs-check-circle certo'></i>
+        <b><p>Parabéns!</p></b>
+        <p>Sua dica sustentável foi alterada com sucesso.</p>
+    </div>
+
+    <div id="erro">
+        <div class="erro">
+            <span id="close">X</span>
+            <i class='bx bxs-x-circle'></i>
+            <p id="msgErro"></p>
+            <p>Tente novamente!</p>
+        </div>
+    </div>
+
+    <script type="module" src="../js/formDica.js"></script>
+</body>
+</html>

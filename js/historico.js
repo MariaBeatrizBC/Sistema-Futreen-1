@@ -11,8 +11,12 @@ const pontosTotal = document.getElementById('pontosTotal')
 
 document.addEventListener('DOMContentLoaded', buscarHistorico())
 
+const nomeUsuario = document.getElementById('nomeUsuario').innerText = sessionStorage.getItem('username')
+
 async function buscarHistorico(){
-    const response = await fetch(`http://localhost:8080/api/banho/${sessionStorage.getItem('userId')}/03/2004`).then((resposta) => {
+    let data = new Date()
+
+    const response = await fetch(`http://localhost:8080/api/banho/${sessionStorage.getItem('userId')}/${data.getMonth() + 1}/${data.getFullYear()}`).then((resposta) => {
         resposta.json().then((historicoJson) => {
 
             const dados = historicoJson[0]

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dicas.css">
+    <link rel="icon" href="../img/Logo.png">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Dicas Sustentáveis</title>
+</head>
+<body>    
+
+    <main id="main">
+        <h1>Dicas sustentáveis</h1>
+
+        <div class="escolha">
+            <p id="todasDicas">Todas as Dicas</p>
+            <p id="minhasDicas">Minhas Dicas</p>
+            <div class="barra">
+                <div class="barrinha" id="barra"></div>
+            </div>
+        </div>
+
+        <div id="todas">
+
+        </div>
+
+        <div id="minhas">
+
+        </div>
+        <div id="aviso">
+            <i class='bx bxs-message-x'></i>
+            <p class="avisoMsg">Nenhuma dica sustentável encontrada!</p>
+        </div>
+    </main>
+
+    <div class="viewDica" id="viewDica">
+        <div class="containerDica" id="containerDica">
+            
+        </div>  
+        
+        <div id="deletarDiv">
+            <i class='bx bxs-error'></i>
+            <b><p>Deseja deletar esta Dica Sustentável?</p></b>
+            <p>Ao deletar esta dica sustentável será decrementado 20 pontos da sua pontuação totoal!</p>
+            <button id="excluir">Excluir</button>
+            <button id="cancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <a href="formDica.html" class="btForm">+</a>
+    
+    <script src="../js/dicas.js" type="module"></script>
+</body>
+</html>

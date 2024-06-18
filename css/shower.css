@@ -16,6 +16,28 @@
     font-family: Inter-bold;
     src: url(/fonts/Inter/static/Inter-Bold.ttf);
 }
+@keyframes notificar{
+    0%{
+        opacity: 0;
+        display: none;
+        transform: translateY(200px);
+    }
+    25%{
+        opacity: 1;
+        display: block;
+        transform: translateY(0);
+    }
+    50%{
+        opacity: 1;
+        display: block;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        display: none;
+        transform: translateY(200px);
+    }
+}
 body{
     background-color: var(--corBranco);
     margin: 0px;
@@ -187,4 +209,71 @@ span{
     transform: scale(1.1);
     box-shadow: 5px 5px 5px gray;
     background-color: #008000cc;
+}
+
+.sucesso{
+    border: 2px solid #008000;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    display: none;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 50%);
+}
+p{
+    margin: 0px;
+    padding: 0px;
+}
+.certo{
+    color: #008000;
+    font-size: 50px;
+}
+.ponto{
+    margin-bottom: 0px;
+}
+
+#erro{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.erro{
+    font-family: Inter;
+    width: 400px;
+    border: 2px solid #008000;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    color: black;
+    font-family: Inter-bold;
+    position: relative;
+}
+#msgErro{
+    color: black;
+}
+.erro i{
+    font-size: 40px;
+    color: rgba(255, 0, 0, 80%);
+}
+#close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    transition: 1s;
+    cursor: pointer;
+    font-size: 20px;
+}
+#close:hover{
+    transform: scale(1.3);
+    color: #8BC02B;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
 }
