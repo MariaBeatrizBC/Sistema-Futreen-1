@@ -87,7 +87,7 @@ async function buscarHistorico(){
             table.appendChild(thead)
             table.appendChild(tbody)
             const div = document.createElement('div')
-            div.className = 'banho'
+            div.className = 'banhos'
             div.appendChild(table)
             main.appendChild(div)
             

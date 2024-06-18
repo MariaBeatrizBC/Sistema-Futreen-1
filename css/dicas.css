@@ -9,36 +9,111 @@
 
 @font-face {
     font-family: Inter;
-    src: url(/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+    src: url(../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 @font-face {
     font-family: Inter-bold;
-    src: url(/fonts/Inter/static/Inter-Bold.ttf);
-}
-
-@keyframes moverBarra {
-    from{
-        transform: translateX(0%);
-    }
-    to{
-        transform: translateX(100%);
-    }
+    src: url(../fonts/Inter/static/Inter-Bold.ttf);
 }
 
 body{
     background-color: var(--corBranco);
     margin: 0px;
     overflow-y: hidden;
-    font-family: Inter;
-    overflow-x: hidden;
+    height: 100vh;
 }
-* {
-    margin: 0px;
-    padding: 0px;
-}
-/* Rever essa parte do css */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:var(--corFundo);
+    border: 1px solid var(--corDetalhes);
+}
+
+#logo {
+    height: 9vh;
+    padding: 5px;
+    position: absolute;
+}
+
+#logo:hover {
+    filter: opacity(80%);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24,
+}
+
+#burguer {
+    color: var(--corDetalhes);
+    display: block;
+    text-align: right;
+    padding: 28px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+}
+
+.menu > ul {
+    list-style-type: none;
+}
+
+.menu > ul > li > a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--corDetalhes);
+    font-size: 15px;
+    font-family: Inter;
+    color: var(--corBranco);
+    border-top: 2px solid var(--corBranco);
+}
+
+.menu > ul > li > a:hover {
+    background-color: #8BC02B;
+}
+
+#atual {
+    color: var(--corTextos);
+}
+
+#nomeUsuario {
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    margin: -45px -100px;
+    font-family: Inter;
+    font-size: 15px;
+    color: black;
+}
+
+#nomeUsuario:hover {
+    color: var(--corTextos);
+}
+
+.perfil {
+    display: none;
+    text-align: right;
+    margin: 0px 10px 0px 710px;
+}
+
+#perfil {
+    text-align:  right;
+    height: 70px;
+    border-radius: 50px;
+    border: 2px solid #008000;
+}
 
 main{
     display: flex;
@@ -46,9 +121,10 @@ main{
     justify-content: center;
 }
 h1{
-    display: block;
-    width: 100%;
-    color: #008000;
+    font-family: 'Inter-bold';
+    color: var(--corDetalhes);
+    font-size: 25px;
+    padding: 30px;
     text-align: center;
 }
 .escolha{

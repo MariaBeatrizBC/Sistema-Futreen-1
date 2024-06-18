@@ -74,5 +74,19 @@
         width: 100%;
         font-size: 18px;
     }
+    .grafico {
+        width: 40vw;
+    }
+    table{
+        width: 65vw;
+        flex-wrap: wrap;
+    }
+    th{
+        color: #8BC02B;
+        font-family: Inter-bold;
+    }
+    td{
+        text-align: center;
+    }
     
 }

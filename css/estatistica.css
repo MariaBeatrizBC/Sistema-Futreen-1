@@ -190,19 +190,36 @@ main{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
     font-size: 15px;
 }
+
+.cpDadotempoTotal, .cpDadotempoMedia {
+    background-color: #d9d9d9;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 18vw;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 50%);
+    font-size: 15px;
+}
+
 .grafico{
-    width: 30vw;
+    width: 90vw;
     margin: auto;
 }
+
 #grafico {
     width: 20vw;
+    margin-bottom: 30px;
 }
+
 .aHistorico{
     background-color: #008000;
     color: white;
     text-decoration: none;
     padding: 5px;
     border-radius: 10px;
-    margin-left: -20vw;
+    margin: auto;
 }
 

@@ -157,6 +157,7 @@ main{
     overflow-y: auto;
     margin-top: 20px;
 }
+
 .banho{
     border: 2px solid #008000;
     border-radius: 15px;
@@ -164,6 +165,11 @@ main{
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 50%);
     margin-bottom: 10px;
 }
+
+#banhos {
+    width: 70%;
+}
+
 table{
     width: 65vw;
     flex-wrap: wrap;
@@ -174,4 +180,42 @@ th{
 }
 td{
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .banho > table{
+        width: 50vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .banho > table > thead > tr > th{
+        display: flex;
+        flex-wrap: wrap;
+        color: #8BC02B;
+        font-family: Inter-bold;
+    }
+    
+    .banho > table > tbody > tr > td{
+        display: block;
+        flex-wrap: wrap;
+        text-align: right;
+    }
+    
+    .banho > table > thead > #titles {
+        position: absolute;
+    
+    }
+    
+    .banho > table > tbody > #results {
+        display: block;
+        text-align: right;
+        margin-left:45vw;
+    }
+
+    .banhos th {
+        padding: 10px;
+
+    }
+
 }

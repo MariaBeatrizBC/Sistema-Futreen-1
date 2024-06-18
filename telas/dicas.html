@@ -7,9 +7,32 @@
     <link rel="icon" href="../img/Logo.png">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/responsivo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Dicas Sustentáveis</title>
 </head>
 <body>    
+
+    <header>
+        <a href="../index.html"><img id="logo" src="../img/Logo.png" alt="logo"></a>
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <nav class="menu" id="itens">
+            <ul>
+                <li><a href="foruns.html">Fóruns</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="meusForuns.html">Meus Fóruns</a></li>
+                <li><a href="shower.html">Shower Challenge</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="dicas.html" id="atual">Dicas</a></li>
+                <li id="menuPerfil"><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="perfil">
+            <a href="perfil.html" class="linkPerfil">
+            <p id="nomeUsuario">@nomedeusuario</p>
+            <img id="perfil" src=" " alt="perfil"></a>
+        </div>
+    </header>
 
     <main id="main">
         <h1>Dicas sustentáveis</h1>

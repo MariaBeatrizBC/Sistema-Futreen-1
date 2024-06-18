@@ -16,6 +16,12 @@ const deletarDiv = document.getElementById('deletarDiv')
 const excluir = document.getElementById('excluir')
 const cancelar = document.getElementById('cancelar')
 
+const nomeUser = document.getElementById('nomeUsuario')
+nomeUser.innerText = sessionStorage.getItem("username")
+
+const perfil = document.getElementById('perfil')
+perfil.src = sessionStorage.getItem('fotoPerfil')
+
 
 document.addEventListener('DOMContentLoaded', function(){
     listarTodas()
@@ -362,3 +368,11 @@ barra.addEventListener('animationend', function(){
 function printar(value){
     console.log(value)
 }
+
+function clickMenu(){
+    if(itens.style.display == 'block') {
+        itens.style.display = 'none';
+    } else {
+        itens.style.display = 'block';
+    }
+} 

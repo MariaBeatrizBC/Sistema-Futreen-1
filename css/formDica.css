@@ -16,6 +16,24 @@
     font-family: Inter-bold;
     src: url(../fonts/Inter/static/Inter-Bold.ttf);
 }
+
+.material-symbols-outlined {
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #008000;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24,
+}
+
+#voltar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 body{
     background-color: var(--corBranco);
     margin: 0px;
@@ -29,7 +47,7 @@ body{
 }
 form{
     background-color: white;
-    width: 700px;
+    width: 70vw;
     padding: 15px;
     font-family: Inter;
     border: 1px solid #008000;
@@ -44,7 +62,7 @@ h2{
 .inputs{
     text-align: left;
     margin: auto;
-    width: 500px;
+    width: 50vw;
 }
 input{ 
     border: none;

@@ -18,9 +18,6 @@
         height: 90px;
         border: 1px solid var(--corDetalhes);
     }
-    #logo {
-        height: 11.5vh;
-    }
     #burguer {
         display: none;
     }
@@ -79,5 +76,16 @@
     #covName {
         width: 100%;
         font-size: 18px;
+    }
+    #stop {
+        margin-left: 20px;
+        width: 60px;
+        height: 55px;
+    }
+    .square {
+        width: 35px;
+        height: 35px;
+        margin-left: 14px;
+        margin-top: -4px;
     }
 }
