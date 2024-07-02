@@ -18,6 +18,7 @@ const cancelar = document.getElementById('cancelar')
 
 const nomeUser = document.getElementById('nomeUsuario')
 nomeUser.innerText = sessionStorage.getItem("username")
+const exit = document.getElementById('exit')
 
 const perfil = document.getElementById('perfil')
 perfil.src = sessionStorage.getItem('fotoPerfil')
@@ -340,10 +341,10 @@ async function listarMinhas(){
     })
 }
 
-/**view.addEventListener('click', function() {
+exit.addEventListener('click', function() {
     view.style.display = 'none'
     container.innerHTML = ''
-}) */
+}) 
 
 
 
@@ -376,3 +377,9 @@ function clickMenu(){
         itens.style.display = 'block';
     }
 } 
+
+document.getElementById('logo').addEventListener('click', function(){
+    sessionStorage.clear()
+})
+
+document.getElementById('burguer').addEventListener('click', clickMenu)

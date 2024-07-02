@@ -57,7 +57,7 @@ function timer() {
 }
 
 function returnData(input) {
-  return input > 10 ? input : `0${input}`;
+  return input >= 10 ? input : `0${input}`;
 }
 if (sessionStorage.getItem('token') == null) {
     location.replace('http://127.0.0.1:5500/index.html');

@@ -31,13 +31,13 @@ async function buscarDados(){
             qtdBanho.innerText = estatistica[0].qtdBanho
             pontos.innerText = estatistica[0].pontos
             tempoTotal.innerText = estatistica[0].tempoTotal
-            consumo.innerText = estatistica[0].consumo 
+            consumo.innerText = estatistica[0].consumo.toFixed(2) 
             timeMedia.innerText = estatistica[0].tempoMedia
 
             qtdBanhoTotal.innerText = estatistica[0].qtdBanhoTotal
             pontosTotal.innerText = estatistica[0].pontuacaoTotal
-            consumoTotal.innerText = estatistica[0].consumoTotal
-            consumoBanho.innerText = estatistica[0].consumoBanho
+            consumoTotal.innerText = estatistica[0].consumoTotal.toFixed(2)
+            consumoBanho.innerText = estatistica[0].consumoBanho.toFixed(2)
 
             new Chart(grafico, {
                 type: 'bar',
@@ -70,6 +70,10 @@ async function buscarDados(){
         })
     })
 }
+
+document.getElementById('logo').addEventListener('click', function(){
+  sessionStorage.clear()
+})
 
 function clickMenu(){
   if(itens.style.display == 'block') {

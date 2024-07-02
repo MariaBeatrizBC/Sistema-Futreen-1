@@ -22,6 +22,9 @@ const inpForum = document.getElementById('inpForum')
 
 window.addEventListener('DOMContentLoaded', buscarForuns())
 
+document.getElementById('logo').addEventListener('click', function(){
+    sessionStorage.clear()
+})
 
 async function buscarForuns() {
     await fetch(`http://localhost:8080/api/forum/${sessionStorage.getItem('userId')}`)

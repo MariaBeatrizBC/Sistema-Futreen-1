@@ -49,7 +49,7 @@ async function listar() {
 
     const response = await fetch("http://localhost:8080/api/forum").then((resposta) => {
         resposta.json().then((forum) => {
-
+            console.log(forum[1].integrantes)
             if(forum != ''){
                 forum.forEach(forum => {
 
@@ -82,8 +82,7 @@ async function listar() {
                     divForum.appendChild(divPart)
                     
                     aviso.style.display = 'none'
-                    main.append(divForum)
-    
+                    main.append(divForum)    
     
                     forum.integrantes.forEach(participante => {
                         if (participante.id == sessionStorage.getItem('userId')) {
@@ -180,13 +179,15 @@ async function pesquisarForum() {
                         divPart.classList.add('participar')
                         const pCriador = document.createElement('p')
                         pCriador.id = 'criadoPor'
-                        pCriador.innerHTML = `Criado por ${forum.criador.nome}`
+                        pCriador.innerHTML = `Criado por ${forum.criador.userName}`
                         const btParticipar = document.createElement('button')
                         btParticipar.id = 'participar'
                         btParticipar.innerHTML = "Participar"
     
                         divPart.appendChild(pCriador)
-                        divPart.appendChild(btParticipar)
+                        if(forum.criador.id != sessionStorage.getItem('userId')){
+                            divPart.appendChild(btParticipar)
+                        }
     
                         divForum.appendChild(pDescricao)
                         divForum.appendChild(img)
@@ -204,6 +205,10 @@ async function pesquisarForum() {
         })
     }
 }
+
+document.getElementById('logo').addEventListener('click', function(){
+    sessionStorage.clear()
+})
 
 function clickMenu(){
     if(itens.style.display == 'block') {

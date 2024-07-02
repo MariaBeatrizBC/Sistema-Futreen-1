@@ -155,8 +155,10 @@ tbody {
 
 td {
     border-bottom: 1px solid #008000;
+    font-family: Inter;
 }
 
 .imgPerfil {
     width: 30px;
+    border-radius: 50%;
 }

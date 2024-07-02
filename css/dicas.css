@@ -22,6 +22,7 @@ body{
     margin: 0px;
     overflow-y: hidden;
     height: 100vh;
+    font-family: Inter;
 }
 
 * {
@@ -147,6 +148,7 @@ h1{
 #todas{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 #minhas{
     display: none;
@@ -178,7 +180,7 @@ h1{
     height: 58.86px;
 }
 .foto{
-    max-width: 70px;
+    max-height: 50px;
     padding-top: 5px;
 }
 .infos{
@@ -223,6 +225,37 @@ h1{
     border: 2px solid #008000;
     width: 500px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 60%);
+    font-family: Inter;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+}
+.containerDica::-webkit-scrollbar{
+    width: 10px;
+    margin-left: 10px;
+}
+.containerDica::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 20px;
+}
+.containerDica::-webkit-scrollbar-thumb{
+    background-color: #C3E9AE;
+    border-radius: 10px;
+    border: 1px solid #008000;
+}
+#exit{
+    font-family: Inter-bold;
+    text-align: right;
+    right: 0px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    transition: 1s;
+    margin-right: 5px;
+}
+#exit:hover{
+    transform: scale(1.2);
+    color: #008000;
 }
 h2{
     color: #008000;
@@ -242,6 +275,13 @@ ul{
 ol{
     margin-left: 70px;
     text-align: justify;
+}
+ol li{
+    margin-bottom: 14px;
+    margin-right: 15px;
+}
+ol li::marker{
+    font-family: Inter-bold;
 }
 .imgDicaAbertaDiv{
     margin: 15px auto;

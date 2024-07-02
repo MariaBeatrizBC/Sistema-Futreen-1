@@ -24,7 +24,7 @@ async function buscarHistorico(){
             tempoMedia.innerText = dados.tempoMedia
             chuvQtd.innerText = dados.qtdChuveiro
             duchaQtd.innerText = dados.qtdDucha
-            consumoTotal.innerText = dados.consumo
+            consumoTotal.innerText = dados.consumo.toFixed(2)
             pontosTotal.innerText = dados.pontos
 
             historicoJson[1].forEach(his => {
@@ -48,8 +48,12 @@ async function buscarHistorico(){
             const tdconsumo = document.createElement('td')
             const tdPontos = document.createElement('td')
 
+            const infoData = new Date(his.data)
             tdData.id = 'data'
-            tdData.innerText = his.data
+            tdData.innerText = `${infoData.getDate() + 1}/${infoData.getMonth() + 1}/${infoData.getFullYear()}`
+            if(infoData.getMonth() + 1 < 10){
+                tdData.innerText = `${infoData.getDate() + 1}/0${infoData.getMonth() + 1}/${infoData.getFullYear()}`
+            }
             tdTempo.id = 'tempo'
             tdTempo.innerText = his.tempo
             tdChuveiro.id = 'chuveiro'
@@ -57,7 +61,7 @@ async function buscarHistorico(){
             tdVazao.id = 'vazao'
             tdVazao.innerText = his.vazaoChuv
             tdconsumo.id = 'consumo'
-            tdconsumo.innerText = his.consumo
+            tdconsumo.innerText = his.consumo.toFixed(2)
             tdPontos.id = 'pontos'
             tdPontos.innerText = his.pontos
 
@@ -95,6 +99,10 @@ async function buscarHistorico(){
         })
     })
 }
+
+document.getElementById('logo').addEventListener('click', function(){
+    sessionStorage.clear()
+})
 
 function clickMenu(){
     if(itens.style.display == 'block') {

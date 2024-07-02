@@ -48,6 +48,10 @@ async function buscaRanking(){
     })
 }
 
+document.getElementById('logo').addEventListener('click', function(){
+    sessionStorage.clear()
+})
+
 function clickMenu(){
     if(itens.style.display == 'block') {
         itens.style.display = 'none';
